@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>webDev - Basics of JS</title>
+        <link rel="icon" type="image/png" href="./images/favicon.png" sizes="32x32" />
+        <meta name="description" content="The page demonstrates Basics of JS" />
+        <link rel="stylesheet" href="./assets/styles/bootstrap-reboot.min.css" />
+        <link rel="stylesheet" href="./assets/styles/main.css" />
+        <!-- <script src="./assets/js/main.js"></script> -->
+    </head>
+    <body>
+        <div id="root">
+            <div class="app container">
+                <input type="checkbox" id="offcanvas-checkbox" />
+                <label for="offcanvas-checkbox" id="offcanvas-overlay"></label>
+                <label for="offcanvas-checkbox" class="d-xl-none offcanvas-toggle" id="app-main-offcanvas-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                    </svg>
+                </label>
+                <header class="app-header app-offcanvas align-items-center d-flex" role="dialog" aria-modal="true" aria-label="Main navigation">
+                    <label for="offcanvas-checkbox" class="d-xl-none offcanvas-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </label>
+                    <a href="/" class="d-flex flex-column app-logo-box">
+                        <div class="app-logo-wrap">
+                            <img alt="webDev" src="/images/logos/logo_webDev.png" />
+                            <span class="sr-only">webDev Logo</span>
+                        </div>
+                        <div class="align-items-center content-panel d-flex justify-content-center">
+                            <div class="gears-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="animation-rotate-90cc bi bi-gear" viewBox="0 0 16 16">
+                                    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
+                                    <path
+                                        d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"
+                                    />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="animation-rotate-90c bi bi-gear big" viewBox="0 0 16 16">
+                                    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
+                                    <path
+                                        d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"
+                                    />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="animation-rotate-90cc bi bi-gear" viewBox="0 0 16 16">
+                                    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
+                                    <path
+                                        d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="text-box">
+                                <strong class="iterationName">Basics of JS</strong>
+                            </div>
+                        </div>
+                    </a>
+                    <nav class="d-flex justify-content-evenly">
+                        <a href="#" class="h-effect-01">HTML</a>
+                        <a href="#" class="h-effect-01">CSS</a>
+                        <a href="#" class="h-effect-01">JS</a>
+                        <a href="#" class="h-effect-01">TypeScript</a>
+                        <a href="#" class="h-effect-01">React</a>
+                    </nav>
+                    <div class="align-items-center d-flex flex-column">
+                        <audio controls class="mw-100">
+                            <source src="/assets/audio/Lovely Piano Song.mp3" type="audio/mpeg" />
+                            <source src="/assets/audio/Lovely-Piano-Song.ogg" type="audio/ogg" />
+                            Your browser does not support audio playback.
+                        </audio>
+                        <small>Some light music for the atmosphere</small>
+                    </div>
+                </header>
+                <div class="app-body d-flex">
+                    <main class="app-block h-effect-01">
+                        <article>
+                            <h1 id="app-main-heading">Hello, world!</h1>
+                            <p><em>Lorem ipsum</em>, dolor sit amet consectetur adipisicing elit.<br />Sint eius fugit dolorem dolore alias <span style="text-decoration: underline">quos accusamus</span> enim exercitationem, fuga autem <strong>maxime dignissimos</strong> cum quas perferendis voluptates ex accusantium harum architecto?</p>
+                        </article>
+                        <section class="card">
+                            <div class="card-header">Card heading</div>
+                            <div class="card-body">
+                                <p>Corrupti, maxime ipsam? Odit dolorum, iusto, impedit consequuntur corporis reiciendis iure facilis maiores sint similique mollitia laborum unde cupiditate eveniet tenetur pariatur.</p>
+                                <ul class="app-list list-group list-group-flush">
+                                    <li>Ea inventore aspernatur corporis esse veritatis unde in. Illo repudiandae molestiae veritatis, obcaecati officia ad?</li>
+                                    <li>Accusantium natus, dolores repellendus quia autem quasi....</li>
+                                    <li>Quos delectus ab ea atque, pariatur, rerum iure excepturi sapiente facere, ex similique. Nesciunt excepturi ratione ipsa quibusdam eius, fugiat vero doloremque!</li>
+                                </ul>
+                            </div>
+                        </section>
+                    </main>
+                    <aside>
+                        <div class="app-block h-effect-01 mb-1">
+                            <form action="">
+                                <input class="mb-1" type="text" name="input_text_1" id="input_text_1" placeholder="Some placeholder" />
+                                <div class="mb-1">
+                                    <input checked type="checkbox" name="check_1" id="check_1" />
+                                    <label for="check_1">Checkbox 1</label>
+                                </div>
+                                <button>Check it</button>
+                            </form>
+                        </div>
+                        <div class="app-block h-effect-01 mb-1">
+                            <h3>Example of an embedded document</h3>
+                            <iframe src="iframe-example.html" width="100%" height="150" title="Embedded document"></iframe>
+                        </div>
+                        <div class="app-block h-effect-01">
+                            <h3>Some running text</h3>
+                            <div class="marquee">
+                                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit magni qui at architecto, minima, amet nulla, nam recusandae consequuntur laborum ipsa!</span>
+                                <span aria-hidden="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit magni qui at architecto, minima, amet nulla, nam recusandae consequuntur laborum ipsa!</span>
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="w-100">
+                        <section class="app-block block-gray">
+                            <h3>Some section content</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto esse distinctio debitis molestiae, quas necessitatibus facere magnam voluptates nulla fugiat, odio sequi dolores earum alias non mollitia eum eligendi accusamus?</p>
+                            <div class="table-responsive">
+                                <table>
+                                    <caption>
+                                        This is caption!
+                                    </caption>
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th>head 1</th>
+                                            <th>head 2</th>
+                                            <th>head 3</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td>foot 1</td>
+                                            <td colspan="2" class="text-center">foot 2 &amp; 3</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>body 1</td>
+                                            <td>body 2</td>
+                                            <td>body 3</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">body 3 & 6</td>
+                                            <td>body 4</td>
+                                            <td>body 5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>body 7</td>
+                                            <td>body 8</td>
+                                        </tr>
+                                        <tr>
+                                            <td>body 9</td>
+                                            <td>body 10<br />Lorem ipsum, dolor sit amet consectetur adipisicing elit. A quae illo consequuntur ad temporibus sed totam laboriosam assumenda error! Ut velit iure similique id minus, nobis tempore voluptatum harum in?</td>
+                                            <td>body 11</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <footer class="app-footer">
+                    <div class="app-block align-items-center d-flex flex-wrap justify-content-between">
+                        <a href="/" class="align-items-center d-flex app-logo-box">
+                            <div class="app-logo-wrap">
+                                <img alt="webDev" src="/images/logos/logo_webDev.png" />
+                                <span class="sr-only">webDev Logo</span>
+                            </div>
+                            <div class="align-items-center content-panel d-flex justify-content-center">
+                                <div class="gears-box">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="animation-rotate-90cc bi bi-gear" viewBox="0 0 16 16">
+                                        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
+                                        <path
+                                            d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"
+                                        />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="animation-rotate-90c bi bi-gear big" viewBox="0 0 16 16">
+                                        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
+                                        <path
+                                            d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"
+                                        />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="animation-rotate-90cc bi bi-gear" viewBox="0 0 16 16">
+                                        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
+                                        <path
+                                            d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="text-box">
+                                    <strong class="iterationName">Basics of JS</strong>
+                                </div>
+                            </div>
+                        </a>
+                        <span class="d-block ms-1">2025</span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script>
+            "use strict";
+
+            /*
+            This script was made to demonstrate the basics of JavaScript.
+            Written by @1vanguard
+            */
+
+            // Add some constants
+            const helloWorld = "Hello, World!";
+            const BASE_NAME = "webDev";
+            const sRGBColorsNum = 16777216,
+                distanceToMoonMm = 384_400_000_000n;
+            // const scriptBirthday = '2025.11.01';
+            const scriptBirthday = new Date("2025-11-01T12:01:02Z").toLocaleDateString(); // Specifying a date using a special JavaScript function
+
+            // Add a few variables
+            let projectName = BASE_NAME,
+                projectIterationName = "Basics of JS",
+                // , projectStatus = undefined
+                projectTechList = ["HTML", "CSS", "JS", "TypeScript", "React"],
+                num_0 = "0",
+                num_1 = 1,
+                num_2 = -10,
+                num_3 = "3",
+                num_4 = 4.5,
+                num_5 = 0,
+                num_6 = " 6... he-he",
+                num_7 = "seven",
+                num_8,
+                num_9,
+                num_10,
+                num_11 = 12,
+                num_12 = null,
+                num_13 = 0,
+                isDeveloper = false,
+                user = {},
+                proUser,
+                crazyArray02 = [BASE_NAME, projectTechList, distanceToMoonMm, [], user, 21, undefined, "Am I good enough?", false, [true, projectTechList[3]], num_7],
+                crazyArray03 = crazyArray02,
+                yearsOfExperience = null;
+            let num_super = (num_8 = num_9 = num_10 = -4 - 2 * -++num_1 + (num_5 *= 13));
+            let num_error = num_super / yearsOfExperience;
+            let userExperienceLevel = "user",
+                userName = "",
+                userAge;
+
+            // Add a Symbol property to user object (hidden from regular enumeration)
+            const userPrivateId = Symbol("private user id");
+            user[userPrivateId] = "id_" + Date.now(); // Unic ID
+
+            // Show greetings and some questions for user
+            alert(helloWorld);
+
+            userAge = prompt("How old are you?", 18);
+            let userNameInput = prompt("What is your name?");
+            isDeveloper = confirm("Are you a web developer?");
+
+            // Do some things with user data
+            user["age"] = userAge;
+            if (userName.length < 1) {
+                if (typeof userNameInput === "string") userName = userNameInput;
+                user["name"] = userName;
+            }
+
+            user.isDeveloper = isDeveloper ? "Yes" : "No";
+            isDeveloper ? (proUser = user) : (proUser = {});
+
+            if (isDeveloper) {
+                proUser.requriedTechList = projectTechList;
+                let yearsOfExperienceInput = prompt("How many years of experience do you have?");
+                proUser.yearsOfExperience ??= yearsOfExperienceInput ? yearsOfExperienceInput : yearsOfExperience
+
+                // Evaluate user's experience level using switch with grouped values
+                const exp = parseInt(proUser.yearsOfExperience);
+                if (isNaN(exp)) {
+                    userExperienceLevel = "unknown";
+                } else {
+                    switch (true) {
+                        case exp >= 0 && exp < 1:
+                            userExperienceLevel = "junior";
+                            break;
+                        case exp >= 1 && exp < 3:
+                            userExperienceLevel = "middle";
+                            break;
+                        case exp >= 3 && exp < 5:
+                        case exp >= 5 && exp < 7:
+                            userExperienceLevel = "senior";
+                            break;
+                        case exp >= 7 && exp < 10:
+                        case exp >= 10 && exp < 15:
+                        case exp >= 15:
+                            userExperienceLevel = "expert";
+                            break;
+                        default:
+                            userExperienceLevel = "unknown";
+                    }
+                }
+                proUser["userExperienceLevel"] = userExperienceLevel;
+            }
+
+            do {
+                if (helloWorld == "Hello, World!") {
+                    // Add example of var notation
+                    var letMeDie = "I'm an outdated variable notation, but I can still be found in legacy code.";
+                    let let_VS_var = "I'm a \"let\" declaration. I've been defined here and are only accessible within the body of the if statement: if (helloWorld == 'Hello, World!').";
+                }
+                num_1++;
+            } while (num_1 < 2);
+
+            // Output data in console
+            console.log("Script birthday: " + scriptBirthday);
+            userName && console.log(userName + ", welcome to JS world!");
+            isDeveloper || console.log("Your experience level is:", userExperienceLevel);
+            if (distanceToMoonMm && !isDeveloper) {
+                console.warn("You are not a developer but it's easy to fix it!\tYou should master the following technologies:");
+                for (let i = 0; i < projectTechList.length; i++) {
+                    if (i < 3) console.log(projectTechList[i]);
+                }
+            } else {
+                console.log("Congratulations! You are a developer and you are on the right side!");
+                console.log(`Symbol property "userPrivateId" was added to user object on 251 string. You can access it directly user[userPrivateId] (${user[userPrivateId]}). But it's not visible in regular keys, JSON or in for...in loop.\nFor example:`);
+                console.log("Object.keys(user): ", Object.keys(user));
+                for (let key in proUser) {
+                    console.log(key + ": ", proUser[key]);
+                }
+                console.log("Stringified JSON object: ", JSON.stringify(user));
+            }
+
+            // Show example of "var" and let_VS_var
+            console.log('This is example of "var" works: ', letMeDie);
+            try {
+                if (let_VS_var) console.log('This is example of "let_VS_var": ', let_VS_var);
+            } catch {
+                console.log('This demonstrates "let_VS_var" scope. let_VS_var was declared inside a block and is not accessible here.');
+            }
+
+            // Show some types check
+            console.log("Type of user.name:", typeof user.name);
+            console.log("Is projectTechList an Array?", projectTechList instanceof Array);
+
+            // Boolean coercion examples
+            console.log("Boolean coercion examples:");
+            console.log(Boolean(0), Boolean(1), Boolean(""), Boolean("hello"), Boolean(null), Boolean({}));
+
+            // Show some Nan
+            console.error("This is example of math error result: ", num_error);
+
+            // Simple timer "While ... do" example
+            let i = num_13;
+            while (i++ < num_11 - 9) {
+                console.log(`This is iteration №${i} of "While ... do" loop`);
+            }
+
+            // Mutate arrays and show result
+            crazyArray03[8] = true;
+            console.log(`I'm mutated element of the crazyArray02 with index 8: ${crazyArray02[8]}`);
+            console.log("I'm mutated crazyArray02 itself:", crazyArray02);
+
+            // Output user objects in console
+            console.log("This is user object: ", user);
+            console.log("This is proUser object: ", proUser);
+
+            // Define resutText01 based on user's unswer and show result alert
+            let resutText01 = isDeveloper ? "Check dev console, please!" : 'Press F12 an open "Console" tab, please!';
+            alert(resutText01);
+        </script>
+    </body>
+</html>
