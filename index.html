@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>webDev - Basics of JS</title>
+        <title>webDev - Advanced JS</title>
         <link rel="icon" type="image/png" href="./images/favicon.png" sizes="32x32" />
-        <meta name="description" content="The page demonstrates Basics of JS" />
+        <meta name="description" content="The page demonstrates Advanced JS" />
         <link rel="stylesheet" href="./assets/styles/bootstrap-reboot.min.css" />
         <link rel="stylesheet" href="./assets/styles/main.css" />
         <!-- <script src="./assets/js/main.js"></script> -->
@@ -53,7 +53,7 @@
                                 </svg>
                             </div>
                             <div class="text-box">
-                                <strong class="iterationName">Basics of JS</strong>
+                                <strong class="iterationName">Advanced JS</strong>
                             </div>
                         </div>
                     </a>
@@ -191,7 +191,7 @@
                                     </svg>
                                 </div>
                                 <div class="text-box">
-                                    <strong class="iterationName">Basics of JS</strong>
+                                    <strong class="iterationName">Advanced JS</strong>
                                 </div>
                             </div>
                         </a>
@@ -218,7 +218,7 @@
 
             // Add a few variables
             let projectName = BASE_NAME,
-                projectIterationName = "Basics of JS",
+                projectIterationName = "Advanced JS",
                 // , projectStatus = undefined
                 projectTechList = ["HTML", "CSS", "JS", "TypeScript", "React"],
                 num_0 = "0",
@@ -252,11 +252,11 @@
             user[userPrivateId] = "id_" + Date.now(); // Unic ID
 
             // Show greetings and some questions for user
-            alert(helloWorld);
+            // alert(helloWorld);
 
-            userAge = prompt("How old are you?", 18);
-            let userNameInput = prompt("What is your name?");
-            isDeveloper = confirm("Are you a web developer?");
+            userAge = 18 // prompt("How old are you?", 18);
+            let userNameInput = 'WebDeveloper' // prompt("What is your name?");
+            isDeveloper = true // confirm("Are you a web developer?");
 
             // Do some things with user data
             user["age"] = userAge;
@@ -270,7 +270,7 @@
 
             if (isDeveloper) {
                 proUser.requriedTechList = projectTechList;
-                let yearsOfExperienceInput = prompt("How many years of experience do you have?");
+                let yearsOfExperienceInput = 10 // prompt("How many years of experience do you have?");
                 proUser.yearsOfExperience ??= yearsOfExperienceInput ? yearsOfExperienceInput : yearsOfExperience
 
                 // Evaluate user's experience level using switch with grouped values
@@ -365,7 +365,7 @@
 
             // Define resutText01 based on user's unswer and show result alert
             let resutText01 = isDeveloper ? "Check dev console, please!" : 'Press F12 an open "Console" tab, please!';
-            alert(resutText01);
+            // alert(resutText01);
         </script>
     </body>
 </html>
