@@ -58,3 +58,26 @@ console.log(menu)
 
 /* --- */
 
+let user = {
+    name: "Иван",
+    age: 37,
+
+    [Symbol.toPrimitive](hint) {
+        return hint == 'string' ? `${this.name}, ${this.age} лет` : this.age;
+    }
+}
+
+let money = {
+    value: 100,
+
+    [Symbol.toPrimitive](hint) {
+        switch (hint) {
+            case 'string':
+                return `${this.value}$`;
+            case 'number':
+                return this.value;
+            case 'default':
+                return this.value + '$';
+        }
+    }
+}
